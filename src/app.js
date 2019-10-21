@@ -1,0 +1,13 @@
+import Vue from 'vue'
+import { createRouter } from '@/router'
+import App from './App.vue'
+
+export const createApp = () => {
+  const router = createRouter()
+  const app = new Vue({
+    router,
+    render: h => h(App)
+  })
+  // 返回 app 和 router
+  return { app, router }
+}

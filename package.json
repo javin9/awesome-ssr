@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.1.2",
+    "express": "^4.17.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
+    "vue-server-renderer": "^2.6.10",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -35,7 +37,39 @@
       "plugin:vue/essential",
       "@vue/standard"
     ],
-    "rules": {},
+    "rules": {
+      "no-unused-vars": "off",
+      "vue/max-attributes-per-line": [
+        2,
+        {
+          "singleline": 10,
+          "multiline": {
+            "max": 1,
+            "allowFirstLine": false
+          }
+        }
+      ],
+      "vue/singleline-html-element-content-newline": "off",
+      "vue/multiline-html-element-content-newline": "off",
+      "vue/name-property-casing": [
+        "error",
+        "PascalCase"
+      ],
+      "vue/no-v-html": "off",
+      "vue/html-self-closing": "off",
+      "semi": [
+        2,
+        "never"
+      ],
+      "quotes": [
+        2,
+        "single"
+      ],
+      "no-useless-return": "off",
+      "no-constant-condition": "off",
+      "prefer-promise-reject-errors": "off",
+      "handle-callback-err": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
