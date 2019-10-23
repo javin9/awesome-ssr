@@ -4,16 +4,20 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:client": "vue-cli-service build",
+    "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build",
+    "build": "yarn build:server && yarn build:client"
   },
   "dependencies": {
     "core-js": "^3.1.2",
+    "cross-env": "^6.0.3",
     "express": "^4.17.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
     "vue-server-renderer": "^2.6.10",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",

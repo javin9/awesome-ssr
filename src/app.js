@@ -2,7 +2,7 @@ import Vue from 'vue'
 import { createRouter } from '@/router'
 import App from './App.vue'
 
-export const createApp = () => {
+export function createApp () {
   const router = createRouter()
   const app = new Vue({
     router,
