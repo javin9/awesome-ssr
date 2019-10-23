@@ -12,6 +12,10 @@ yarn build && node ./ssr/index.js
 //后续会改成热更新和自动重启
 
 ```
+### 访问地址
+```
+http://localhost:3000
+```
 
 ### TODO
 未完待续...

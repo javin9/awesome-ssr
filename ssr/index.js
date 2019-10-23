@@ -12,7 +12,7 @@ const app = express()
 const bundle = require(resolve('../dist/server/vue-ssr-server-bundle.json'))
 // 把client当成静态服务器地址
 app.use(express.static(resolve('../dist/client'), { index: false }))
-// app.use(express.static('../dist/client', { index: false }))
+
 const renderer = createBundleRenderer(bundle, {
   runInNewContext: false, // 推荐
   template: fs.readFileSync(resolve('./template.html'), 'utf8'), // （可选）页面模板
@@ -27,6 +27,6 @@ app.use('*', async (req, res) => {
   res.send(html)
 })
 
-app.listen(3002, () => {
+app.listen(3000, () => {
   console.log('Start Server...')
 })
