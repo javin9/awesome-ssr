@@ -1,6 +1,5 @@
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
-const nodeExternals = require('webpack-node-externals')
 
 const TARGET_NODE = process.env.WEBPACK_TARGET === 'node'
 const target = TARGET_NODE ? 'server' : 'client'
@@ -27,6 +26,7 @@ module.exports = {
     plugins: [TARGET_NODE ? new VueSSRServerPlugin() : new VueSSRClientPlugin()]
   }),
   chainWebpack: config => {
+    // https://github.com/vuejs/vue/issues/8488
     if (process.env.NODE_ENV === 'production') { config.optimization.delete('splitChunks') }
     // https://github.com/vuejs/vue-loader/issues/885
     config.module
