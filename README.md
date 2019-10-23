@@ -1,29 +1,17 @@
 # awesome-ssr
+依赖最新的vue-cli3.0，解决了build中遇到的各种问题
 
-## Project setup
+## 安装
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 本地开发
 ```
-yarn run serve
+yarn build && node ./ssr/index.js
+//后续会改成热更新和自动重启
+
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### TODO
+未完待续...
