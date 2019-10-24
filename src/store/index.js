@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const types = {
-  'ADD': 'Add'
+  'ADD': 'Add',
+  'INIT': 'init'
 }
 
 export function createStore () {
@@ -15,14 +16,30 @@ export function createStore () {
     mutations: {
       [types.ADD] (state) {
         state.count += 2
+      },
+      [types.INIT] (state, count) {
+        state.count = count
       }
     },
     actions: {
       add ({ commit }) {
         commit(types.ADD)
+      },
+      init ({ commit }, count) {
+        commit(types.INIT, count)
+      },
+      // 模拟数据请求
+      ajaxData ({ commit }) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log('ajax data')
+            // 更新store数据
+            let data = Math.random()
+            commit(types.INIT, data)
+            resolve()
+          }, 1000)
+        })
       }
-    },
-    modules: {
     }
   })
 }

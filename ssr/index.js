@@ -20,8 +20,14 @@ const renderer = createBundleRenderer(bundle, {
 })
 
 app.use('*', async (req, res) => {
+  console.log('访问地址：http://localhost:3000/about')
+  console.log(`req.url=${req.url}`) // http://localhost:3000/about 页面刷新，req.url是 /
+  console.log(`req.path=${req.path}`)
+  console.log(`req.originalUrl=${req.originalUrl}`)
+  console.log(`req.baseUrl=${req.baseUrl}`)
+
   const context = {
-    url: req.url
+    url: req.baseUrl
   }
   const html = await renderer.renderToString(context)
   res.send(html)
