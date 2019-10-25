@@ -109,6 +109,8 @@ node ./ssr/demo.js
 大白话：后端渲染出完整的首屏的dom结构返回，前端拿到的内容包括首屏及完整spa结构，应用激活后依然按照spa方式运行，这种页面渲染方式被称为服务端渲染(server side render)
 
 - [为什么使用服务器端渲染 (SSR)？](https://ssr.vuejs.org/zh/#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93-ssr-%EF%BC%9F)
+- 更好的 SEO，由于搜索引擎爬虫抓取工具可以直接查看完全渲染的页面。
+- 更快的内容到达时间 (time-to-content)，特别是对于缓慢的网络情况或运行缓慢的设备
 
 ![SSR](./doc/image/ssr.png)
 
