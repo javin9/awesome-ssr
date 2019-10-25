@@ -19,7 +19,7 @@ const renderer = createBundleRenderer(bundle, {
   clientManifest: require(resolve('../dist/client/vue-ssr-client-manifest.json'))
 })
 
-app.use('*', async (req, res) => {
+app.get('*', async (req, res) => {
   console.log('访问地址：http://localhost:3000/about')
   console.log(`req.url=${req.url}`) // http://localhost:3000/about 页面刷新，req.url是 /
   console.log(`req.path=${req.path}`)
@@ -27,7 +27,7 @@ app.use('*', async (req, res) => {
   console.log(`req.baseUrl=${req.baseUrl}`)
 
   const context = {
-    url: req.baseUrl
+    url: req.url
   }
   const html = await renderer.renderToString(context)
   res.send(html)

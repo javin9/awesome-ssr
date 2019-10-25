@@ -2637,7 +2637,7 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "http://192.168.14.11:8888/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-ejs@^2.6.1:
+ejs@^2.6.1, ejs@^2.7.1:
   version "2.7.1"
   resolved "http://192.168.14.11:8888/ejs/-/ejs-2.7.1.tgz#5b5ab57f718b79d4aca9254457afecd36fa80228"
 
