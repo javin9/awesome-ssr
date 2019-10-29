@@ -2,6 +2,7 @@
   <div class="home">
     Hello,Everybody!
     <div>
+      <div>startdd:</div>
       数量：{{count}}
       <button @click="onClickButton">增加2</button>
     </div>

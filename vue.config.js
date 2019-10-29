@@ -38,5 +38,8 @@ module.exports = {
         options['optimizeSSR'] = false
         return options
       })
+  },
+  devServer: {
+    hot: true
   }
 }

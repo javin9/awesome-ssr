@@ -1,24 +1,71 @@
 # awesome-ssr
 依赖最新的vue-cli3.0，解决了build中遇到的各种问题
 
-### 安装
+- [安装](#install)
+- [开发](#dev)
+  - [配置nodemon.json](#settings)
+  - [添加脚本](#addscript)
+  - [访问地址](#localhost)
+- [安装](#install)
+- [理解SSR](#ssr)
+  - [传统的web开发](#ssr-old)
+  - [SPA时代ssr-spa](#)
+- [循序渐进理解Vue SSR](#vue-ssr)  
+
+
+### <span id="install">安装</span>
 ```
 yarn install
 ```
 
-### 本地开发
+## <span id="dev">开发</span>
+```bash
+# 安装nodemon
+yarn add nodemon --save-dev
 ```
-yarn build && node ./ssr/index.js
-//后续会改成热更新和自动重启
+### <span id="settings">配置nodemon.json</span>
+[nodemon.json配置说明](./NODENOM_README.md)
+```javascript
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "events": {
+    "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
+  },
+  "watch": [
+    "src/"
+  ],
+  "env": {},
+  "ext": ".js,.json,.vue",
+  "legacy-watch": false
+}
+```
 
+
+### <span id="addscript">添加脚本</span>
+```javascript
+"script":{
+    "start": "yarn build && node ./ssr/index.js",
+    "dev": "nodemon --config=nodemon.json"
+}
 ```
-### 访问地址
+
+
+### <span id="localhost">访问地址</span>
 ```
 http://localhost:3000
 ```
 
-## 理解SSR
-### 传统的web开发
+
+##  <span id="ssr">理解SSR</span>
+### <span id="ssr-old">传统的web开发</span>
 ![传统的web开发](./doc/image/old_web.png)
 Express+EJS 展示
 ```javascript
@@ -78,7 +125,7 @@ app.listen(3001, function () {
 node ./ssr/demo.js
 ```
 
-### SPA时代
+### <span id='ssr-spa'>SPA时代</span>
 到了vue，react时代，单页应用优秀的用户体验，逐渐成为了主流，页面整体是JS渲染出来的，称之为
 客户端渲染CSR
 ![SPA](./doc/image/spa.png)
@@ -103,7 +150,7 @@ node ./ssr/demo.js
 </html>
 ```
 
-### SSR(server side render)
+### <span id="ssr-ssr">SSR(server side render)</span>
 官方文档解释
 - [什么是服务器端渲染 (SSR)？](https://ssr.vuejs.org/zh/#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93-ssr-%EF%BC%9F)  
 大白话：后端渲染出完整的首屏的dom结构返回，前端拿到的内容包括首屏及完整spa结构，应用激活后依然按照spa方式运行，这种页面渲染方式被称为服务端渲染(server side render)
@@ -115,7 +162,7 @@ node ./ssr/demo.js
 ![SSR](./doc/image/ssr.png)
 
 
-## 循序渐进理解Vue SSR
+## <span id="vue-ssr">循序渐进理解Vue SSR</span>
 
 ### 用Vue-cli创建新工程
 ```bash

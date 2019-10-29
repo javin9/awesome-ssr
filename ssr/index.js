@@ -2,6 +2,13 @@ const express = require('express')
 const fs = require('fs')
 const path = require('path')
 const { createBundleRenderer } = require('vue-server-renderer')
+// const shell = require('shelljs')
+console.log('重新编译...')
+
+// if (shell.exec('yarn start').code !== 0) {
+//   shell.echo('Error:yarn dev failed')
+//   shell.exit(1)
+// }
 
 const resolve = dir => {
   return path.resolve(__dirname, dir)
