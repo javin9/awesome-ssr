@@ -5,7 +5,7 @@
 - [开发](#dev)
   - [配置nodemon.json](#settings)
   - [添加脚本](#addscript)
-  - [访问地址](#localhost)
+  - [启动](#localhost)
 - [安装](#install)
 - [理解SSR](#ssr)
   - [传统的web开发](#ssr-old)
@@ -58,9 +58,12 @@ yarn add nodemon --save-dev
 ```
 
 
-### <span id="localhost">访问地址</span>
-```
-http://localhost:3000
+
+### <span id="localhost">启动</span>
+
+```bash
+yarn dev
+### 访问地址：http://localhost:3000
 ```
 
 
