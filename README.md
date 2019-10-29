@@ -10,7 +10,7 @@
 - [理解SSR](#ssr)
   - [传统的web开发](#ssr-old)
   - [SPA时代ssr-spa](#)
-- [循序渐进理解Vue SSR](#vue-ssr)  
+  - [循序渐进理解Vue SSR](#vue-ssr)  
 
 
 ### <span id="install">安装</span>
